@@ -4,6 +4,9 @@
         <variable
             name="vm"
             type="com.space.laucher.ui.main.MainViewModel" />
+        <variable
+            name="adapter"
+            type="com.space.laucher.ui.adapter.LauchAdapter" />
     </data>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,7 +23,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
     <ProgressBar
         android:id="@+id/main_progressBar"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:gone="@{!vm.loading}"

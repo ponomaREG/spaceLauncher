@@ -12,7 +12,7 @@ class BaseRepository {
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
     companion object{
-        const val BASE_URL = "http://api.endofthelist.codes"
+        const val BASE_URL = "URL HERE!!!!!!!"
         private var instance:BaseRepository? = null
          fun getInstance():BaseRepository{
             if(instance == null) instance = BaseRepository()

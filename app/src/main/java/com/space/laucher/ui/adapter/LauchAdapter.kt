@@ -1,6 +1,5 @@
 package com.space.laucher.ui.adapter
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -33,7 +32,6 @@ class LauchAdapter:RecyclerView.Adapter<LauchAdapter.Holder>() {
 
         holder.binding.apply {
             launch = items[position]
-
         }
     }
 }
