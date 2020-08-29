@@ -15,6 +15,7 @@ class MainViewModel @ViewModelInject constructor(
     private val repos:MainRepository = MainRepository.getInstance()
     val liveDataLaunchesList:MutableLiveData<List<Launch>> = MutableLiveData()
     var loading:ObservableBoolean = ObservableBoolean(false)
+    val toastLiveData:MutableLiveData<String> = MutableLiveData()
 
     init {
         repos.fetchLaunches(
@@ -22,7 +23,7 @@ class MainViewModel @ViewModelInject constructor(
                 loading.set(true)
             },
             onError = {
-            //TODO:ON ERROR
+            toastLiveData.postValue(it.message)
             },
             onNext = {
                 liveDataLaunchesList.value = it.launches

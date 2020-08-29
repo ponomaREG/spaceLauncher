@@ -22,6 +22,7 @@
         android:padding="6dp"
         app:adapter="@{adapter}"
         app:launcherList="@{vm.liveDataLaunchesList}"
+        app:toast = "@{vm.toastLiveData}"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
     <ProgressBar
         android:id="@+id/main_progressBar"
