@@ -20,6 +20,8 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="6dp"
+        app:adapter="@{adapter}"
+        app:launcherList="@{vm.liveDataLaunchesList}"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
     <ProgressBar
         android:id="@+id/main_progressBar"

@@ -24,14 +24,16 @@ class MainRepository {
 
     fun fetchLaunches(
         onNext:(LaunchesResponse) -> Unit,
-        onError:(Throwable) -> Unit
+        onError:(Throwable) -> Unit,
+        onSuccess:() -> Unit
     ){
         loadR().fetchLaunches()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe(
                 onNext,
-                onError
+                onError,
+                onSuccess
             )
     }
 
