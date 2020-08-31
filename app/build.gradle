@@ -8,7 +8,7 @@ apply from: '../dependencies.gradle'
 android {
     compileSdkVersion versions.compileSdk
     defaultConfig {
-        applicationId "com.skydoves.pokedex"
+        applicationId "com.space.launcher"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode

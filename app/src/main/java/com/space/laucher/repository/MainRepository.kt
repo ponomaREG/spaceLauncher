@@ -1,11 +1,13 @@
 package com.space.laucher.repository
 
+import android.util.Log
 import com.space.laucher.model.LaunchesResponse
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 class MainRepository {
@@ -27,6 +29,7 @@ class MainRepository {
         onError:(Throwable) -> Unit,
         onSuccess:() -> Unit
     ){
+        Log.e("FETCH","~")
         loadR().fetchLaunches()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
@@ -38,9 +41,9 @@ class MainRepository {
     }
 
     interface MainRepositoryQueries{
-        @GET
+        @GET("launch/next/{count}/")
         fun fetchLaunches(
-            @Query("count") count:Int = 10
+            @Path("count") count:Int = 10
         ):Observable<LaunchesResponse>
     }
 }

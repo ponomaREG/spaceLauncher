@@ -16,6 +16,7 @@ class MainActivity : DataBindingActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.apply {
+            lifecycleOwner = this@MainActivity
             vm = mainViewModel
             adapter = LauchAdapter()
         }
