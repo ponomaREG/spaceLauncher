@@ -11,6 +11,7 @@ import androidx.lifecycle.switchMap
 import com.space.laucher.model.Launch
 import com.space.laucher.repository.MainRepository
 import com.space.laucher.sample.LiveCoroutinesViewModel
+import timber.log.Timber
 
 class MainViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle:SavedStateHandle
@@ -29,8 +30,9 @@ class MainViewModel @ViewModelInject constructor(
                 loading.set(false)
             },
             onError = {
-                Log.e("ON ERROR","ASD")
-            toastLiveData.postValue(it.stackTrace.toString())
+                Log.e("error",it.message.toString())
+                toastLiveData.postValue(it.message.toString())
+                loading.set(false)
             },
             onNext = {
                 Log.e("LIST",it.launches.toString())

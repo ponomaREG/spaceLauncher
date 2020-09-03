@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.space.laucher.R
 import com.space.laucher.databinding.RvItemBinding
 import com.space.laucher.model.Launch
+import com.space.laucher.ui.detail.DetailActivity
 
 class LauchAdapter:RecyclerView.Adapter<LauchAdapter.Holder>() {
     private val items:MutableList<Launch> = mutableListOf()
@@ -34,6 +35,9 @@ class LauchAdapter:RecyclerView.Adapter<LauchAdapter.Holder>() {
         Log.e("ON BIND VIEW HOLDER","1")
         holder.binding.apply {
             launch = items[position]
+            root.setOnClickListener {
+                DetailActivity.startActivity(root.context,items[position])
+            }
         }
     }
 }
