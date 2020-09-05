@@ -5,43 +5,55 @@
             name="launch"
             type="com.space.laucher.model.Launch" />
     </data>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.space.laucher.ui.detail.DetailActivity">
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{launch.name}"
-        android:textSize="23sp"/>
-    <TextView
+        android:orientation="vertical">
+    <com.space.laucher.ui.customViews.PairOfTextViews
+        android:id="@+id/ptv_name"
+        app:ptv_textOfLeftTextView="Name"
+        app:ptv_textOfRightTextView="{launch.name}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{launch.net}"
-        android:textSize="23sp"/>
-    <TextView
+        />
+
+    <com.space.laucher.ui.customViews.PairOfTextViews
+        android:id="@+id/ptv_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{launch.location.pads.get(0).name}"
-        android:textSize="23sp"/>
-    <TextView
-        android:autoLink="web"
+        app:ptv_textOfLeftTextView="Date"
+        app:ptv_textOfRightTextView="{launch.net}"/>
+    <com.space.laucher.ui.customViews.PairOfTextViews
+        android:id="@+id/ptv_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{launch.location.pads.get(0).mapURL}"
-        android:textSize="23sp"/>
-    <TextView
+        app:ptv_textOfLeftTextView="Location"
+        app:ptv_textOfRightTextView="{launch.location.name}"/>
+    <com.space.laucher.ui.customViews.PairOfTextViews
+        android:id="@+id/ptv_lsp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{launch.lsp.name}"
-        android:textSize="23sp"/>
-    <TextView
+        app:ptv_textOfLeftTextView="Lsp name"
+        app:ptv_textOfRightTextView="{launch.lsp.name}"/>
+    <com.space.laucher.ui.customViews.PairOfTextViews
+        android:id="@+id/ptv_countryCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{launch.lsp.countryCode}"
-        android:textSize="23sp"/>
-</LinearLayout>
+        app:ptv_textOfLeftTextView="Country code"
+        app:ptv_textOfRightTextView="{launch.lsp.countryCode}"
+        />
+        <ImageView
+            android:id="@+id/detail_imageOfRocket"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+    </LinearLayout>
+</ScrollView>
 </layout>

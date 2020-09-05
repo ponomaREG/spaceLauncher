@@ -7,6 +7,9 @@
         <variable
             name="adapter"
             type="com.space.laucher.ui.adapter.LauchAdapter" />
+        <variable
+            name="divider"
+            type="androidx.recyclerview.widget.DividerItemDecoration" />
     </data>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -21,6 +24,7 @@
         android:clipToPadding="false"
         android:padding="6dp"
         app:adapter="@{adapter}"
+        app:divider="@{divider}"
         app:launcherList="@{vm.liveDataLaunchesList}"
         app:toast = "@{vm.toastLiveData}"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />

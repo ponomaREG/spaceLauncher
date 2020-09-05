@@ -2,6 +2,8 @@ package com.space.laucher.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.space.laucher.R
 import com.space.laucher.databinding.ActivityMainBinding
 import com.space.laucher.sample.DataBindingActivity
@@ -19,6 +21,7 @@ class MainActivity : DataBindingActivity() {
             lifecycleOwner = this@MainActivity
             vm = mainViewModel
             adapter = LauchAdapter()
+            divider = DividerItemDecoration(this@MainActivity,LinearLayoutManager.VERTICAL)
         }
     }
 }

@@ -30,7 +30,7 @@ class MainRepository {
         onSuccess:() -> Unit
     ){
         Log.e("FETCH","~")
-        loadR().fetchLaunches()
+        loadR().fetchLaunches(30)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe(

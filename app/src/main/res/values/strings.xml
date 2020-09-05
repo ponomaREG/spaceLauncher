@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">spaceLaucher</string>
+
+    <string name="detail_column_name">Name</string>
+
+
+    <string name="pairTextView_textOfRightTextView_DEF">Title</string>
+    <string name="pairTextView_textOfLeftTextView_DEF">Content</string>
 </resources>
