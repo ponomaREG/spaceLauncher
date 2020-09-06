@@ -10,7 +10,6 @@ import com.space.laucher.extensions.loadPhoto
 import com.space.laucher.model.Launch
 import com.space.laucher.sample.DataBindingActivity
 import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.android.synthetic.main.activity_detail.view.*
 import java.lang.Exception
 
 class DetailActivity : DataBindingActivity() {
