@@ -42,7 +42,7 @@ class DetailActivity : DataBindingActivity() {
         ptv_countryCode.setTextOfRightTextView(launchExtra?.lsp?.countryCode)
         ptv_rocketName.setTextOfRightTextView(launchExtra?.rocket?.name)
         ptv_rocketFamily.setTextOfRightTextView(launchExtra?.rocket?.familyname)
-        if(launchExtra?.missions?.size!! > 0) {
+        if(launchExtra?.missions?.size!!>0) {
             ptv_missionName.setTextOfRightTextView(launchExtra.missions?.get(0)?.name)
             ptv_missionDesc.setTextOfRightTextView(launchExtra.missions?.get(0)?.description)
             ptv_missionTypeName.setTextOfRightTextView(launchExtra.missions?.get(0)?.typeName)
