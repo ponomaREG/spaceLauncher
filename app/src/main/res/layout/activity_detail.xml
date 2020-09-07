@@ -17,6 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:text="Launch"/>
     <com.space.laucher.ui.customViews.PairOfTextViews
         android:id="@+id/ptv_name"
         app:ptv_textOfLeftTextView="Name"
@@ -50,10 +57,73 @@
         app:ptv_textOfLeftTextView="Country code"
         app:ptv_textOfRightTextView="{launch.lsp.countryCode}"
         />
-        <ImageView
-            android:id="@+id/detail_imageOfRocket"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:text="Rocket"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+            <ImageView
+                android:id="@+id/detail_imageOfRocket"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:layout_height="300dp"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="0.7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.space.laucher.ui.customViews.PairOfTextViews
+                    android:id="@+id/ptv_rocketName"
+                    app:ptv_textOfLeftTextView="Name"
+                    app:ptv_weightOfLeftTextView="1"
+                    app:ptv_weightOfRightTextView="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <com.space.laucher.ui.customViews.PairOfTextViews
+                    android:id="@+id/ptv_rocketFamily"
+                    android:layout_width="match_parent"
+                    app:ptv_textOfLeftTextView="Family"
+                    app:ptv_weightOfLeftTextView="1"
+                    app:ptv_weightOfRightTextView="0.5"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/detail_title_mission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:text="Mission"/>
+        <com.space.laucher.ui.customViews.PairOfTextViews
+            android:id="@+id/ptv_missionName"
+            app:ptv_textOfLeftTextView="Name"
+            app:ptv_weightOfLeftTextView="1.3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.space.laucher.ui.customViews.PairOfTextViews
+            android:id="@+id/ptv_missionDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ptv_weightOfLeftTextView="1"
+            app:ptv_weightOfRightTextView="0.4"
+            app:ptv_textOfLeftTextView="Description"/>
+        <com.space.laucher.ui.customViews.PairOfTextViews
+            android:id="@+id/ptv_missionTypeName"
+            app:ptv_textOfLeftTextView="Type Name"
+            app:ptv_weightOfLeftTextView="1.3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
         <Button
             android:id="@+id/detail_showOnMap"
             android:layout_gravity="center"

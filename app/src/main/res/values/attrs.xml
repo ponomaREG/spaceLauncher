@@ -3,5 +3,7 @@
     <declare-styleable name="PairOfTextViews">
         <attr name="ptv_textOfLeftTextView" format="string"/>
         <attr name="ptv_textOfRightTextView" format="string"/>
+        <attr name="ptv_weightOfLeftTextView" format="float"/>
+        <attr name="ptv_weightOfRightTextView" format="float"/>
     </declare-styleable>
 </resources>

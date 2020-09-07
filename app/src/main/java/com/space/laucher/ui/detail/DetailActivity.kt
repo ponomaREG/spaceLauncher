@@ -40,6 +40,18 @@ class DetailActivity : DataBindingActivity() {
         ptv_location.setTextOfRightTextView(launchExtra?.location?.name)
         ptv_lsp.setTextOfRightTextView(launchExtra?.lsp?.name)
         ptv_countryCode.setTextOfRightTextView(launchExtra?.lsp?.countryCode)
+        ptv_rocketName.setTextOfRightTextView(launchExtra?.rocket?.name)
+        ptv_rocketFamily.setTextOfRightTextView(launchExtra?.rocket?.familyname)
+        if(launchExtra?.missions?.size!! > 0) {
+            ptv_missionName.setTextOfRightTextView(launchExtra.missions?.get(0)?.name)
+            ptv_missionDesc.setTextOfRightTextView(launchExtra.missions?.get(0)?.description)
+            ptv_missionTypeName.setTextOfRightTextView(launchExtra.missions?.get(0)?.typeName)
+        }else{
+            ptv_missionDesc.gone(true)
+            ptv_missionName.gone(true)
+            ptv_missionTypeName.gone(true)
+            detail_title_mission.gone(true)
+        }
         val imageURL = launchExtra?.rocket?.imageURL
         if(imageURL != null)detail_imageOfRocket.loadPhoto(imageURL)
 
