@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.space.laucher.R
 import com.space.laucher.extensions.gone
 import com.space.laucher.extensions.loadPhoto
+import com.space.laucher.extensions.prepareActionBar
 import com.space.laucher.model.Launch
 import com.space.laucher.sample.DataBindingActivity
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -28,6 +29,7 @@ class DetailActivity : DataBindingActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+        prepareActionBar()
         val launchExtra:Launch? = intent.extras?.getParcelable(LAUNCH_KEY)
         if(launchExtra == null) finish()
         //ptv_name.setTextOfRightTextView(launchExtra?.name)
@@ -64,7 +66,6 @@ class DetailActivity : DataBindingActivity() {
         }catch (e:Exception) {
             detail_showOnMap.gone(true)
         }
-
         detail_showOnMap.setOnClickListener {
             val gmmIntentUri: Uri = Uri.parse("geo:0,0?q=$latitude,$longitude")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
@@ -74,5 +75,6 @@ class DetailActivity : DataBindingActivity() {
             }
         }
     }
+
 
 }
