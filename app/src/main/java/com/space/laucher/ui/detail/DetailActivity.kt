@@ -66,7 +66,7 @@ class DetailActivity : DataBindingActivity() {
         }
 
         detail_showOnMap.setOnClickListener {
-            val gmmIntentUri: Uri = Uri.parse("geo:$latitude,$longitude")
+            val gmmIntentUri: Uri = Uri.parse("geo:0,0?q=$latitude,$longitude")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             if (mapIntent.resolveActivity(packageManager) != null) {

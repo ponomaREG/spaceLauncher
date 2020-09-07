@@ -71,6 +71,7 @@
             android:layout_height="300dp">
             <ImageView
                 android:id="@+id/detail_imageOfRocket"
+                android:foreground="@drawable/rocket_image"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
