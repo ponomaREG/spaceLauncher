@@ -7,8 +7,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.space.laucher.R
 import com.space.laucher.databinding.RvItemBinding
+import com.space.laucher.extensions.loadCountryFlagByCountryCode
 import com.space.laucher.model.Launch
 import com.space.laucher.ui.detail.DetailActivity
+import kotlinx.android.synthetic.main.rv_item.view.*
 
 class LauchAdapter:RecyclerView.Adapter<LauchAdapter.Holder>() {
     private val items:MutableList<Launch> = mutableListOf()
@@ -16,7 +18,6 @@ class LauchAdapter:RecyclerView.Adapter<LauchAdapter.Holder>() {
     class Holder(val binding:RvItemBinding):RecyclerView.ViewHolder(binding.root)
 
     fun addItems(new_items:List<Launch>){
-        Log.e("new_items",new_items.size.toString())
         items.addAll(new_items)
         notifyDataSetChanged()
     }
@@ -32,9 +33,9 @@ class LauchAdapter:RecyclerView.Adapter<LauchAdapter.Holder>() {
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        Log.e("ON BIND VIEW HOLDER","1")
         holder.binding.apply {
             launch = items[position]
+            items[position].lsp?.countryCode?.let { root.item_country.loadCountryFlagByCountryCode(it) }
             root.setOnClickListener {
                 DetailActivity.startActivity(root.context,items[position])
             }
