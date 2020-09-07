@@ -18,7 +18,7 @@
             android:textSize="26sp"
             android:padding="3dp"
             android:textColor="@android:color/black"
-            android:text="@{launch.name}"
+            android:text="@{launch.name }"
             android:gravity="center"
             android:layout_height = "match_parent"
             android:layout_width = "match_parent"/>
